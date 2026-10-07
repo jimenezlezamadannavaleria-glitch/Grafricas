@@ -2,389 +2,253 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Graficador de Ecuaciones</title>
+    <title>Calculadora de Rectas</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
+    <div class="contenedor">
 
-<header>
+        <h1>Calculadora de Rectas</h1>
 
-    <h1>📈 Graficador de Ecuaciones de Recta</h1>
-
-    <p>
-        Convierte una ecuación a la forma
-        <strong>y = mx + b</strong>
-        y realiza su gráfica.
-    </p>
-
-</header>
-
-
-
-<main>
-
-
-    <!-- PANEL DE PROCEDIMIENTO -->
-
-    <section class="panel">
-
-
-        <h2>🧮 Ecuación</h2>
-
-        <p class="descripcion">
-
-            Introduce los valores de la ecuación:
-
+        <p class="subtitulo">
+            Convierte una ecuación de la forma:
         </p>
 
-
-        <div class="formulaEntrada">
-
-
-            <input
-                type="number"
-                id="a"
-                value="-4"
-            >
-
-            <span>x</span>
+        <div class="formula">
+            Ax + By + C = 0
+        </div>
 
 
-            <span>+</span>
+        <!-- ENTRADA -->
 
+        <div class="entrada">
 
-            <input
-                type="number"
-                id="bGeneral"
-                value="-7"
-            >
+            <h2>Ingresa los valores</h2>
 
-            <span>y</span>
+            <div class="inputs">
 
+                <label>
+                    A
+                    <input type="number" id="A" value="2">
+                </label>
 
-            <span>+</span>
+                <label>
+                    B
+                    <input type="number" id="B" value="3">
+                </label>
 
+                <label>
+                    C
+                    <input type="number" id="C" value="-6">
+                </label>
 
-            <input
-                type="number"
-                id="c"
-                value="-3"
-            >
+            </div>
 
-            <span>= 0</span>
+            <button onclick="calcular()">
+                Calcular
+            </button>
 
+            <p id="error"></p>
 
         </div>
 
 
+        <!-- RESULTADOS -->
 
-        <button
-            id="resolver"
-            class="botonPrincipal"
-        >
+        <div class="resultado">
 
-            Resolver y graficar
+            <h2>Resultados</h2>
 
-        </button>
+            <div class="tarjeta">
+
+                <h3>Pendiente</h3>
+
+                <p id="pendiente">
+                    -
+                </p>
+
+                <span>m</span>
+
+            </div>
 
 
+            <div class="tarjeta">
 
-        <button
-            id="limpiar"
-            class="botonSecundario"
-        >
+                <h3>Ordenada al origen</h3>
 
-            Limpiar
+                <p id="intercepto">
+                    -
+                </p>
 
-        </button>
+                <span>b</span>
 
+            </div>
+
+
+            <div class="ecuacion">
+
+                <h3>Ecuación final</h3>
+
+                <p id="ecuacion">
+                    -
+                </p>
+
+            </div>
+
+        </div>
 
 
         <!-- PROCEDIMIENTO -->
 
         <div class="procedimiento">
 
-
-            <h2>📚 Procedimiento</h2>
-
-
-            <!-- PASO 1 -->
+            <h2>Procedimiento</h2>
 
             <div class="paso">
 
-                <div class="numero">
-                    1
-                </div>
+                <strong>1. Ecuación original</strong>
 
-
-                <div class="contenidoPaso">
-
-                    <h3>
-                        Ecuación original
-                    </h3>
-
-
-                    <p
-                        id="ecuacionOriginal"
-                        class="formula"
-                    >
-
-                        -4x - 7y - 3 = 0
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PASO 2 -->
-
-            <div class="paso">
-
-                <div class="numero">
-                    2
-                </div>
-
-
-                <div class="contenidoPaso">
-
-                    <h3>
-                        Despejamos y
-                    </h3>
-
-
-                    <p
-                        id="despeje"
-                        class="formula"
-                    >
-
-                        -7y = 4x + 3
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PASO 3 -->
-
-            <div class="paso">
-
-                <div class="numero">
-                    3
-                </div>
-
-
-                <div class="contenidoPaso">
-
-                    <h3>
-                        Dividimos entre el coeficiente de y
-                    </h3>
-
-
-                    <p
-                        id="division"
-                        class="formula"
-                    >
-
-                        y = (4/-7)x + (3/-7)
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PASO 4 -->
-
-            <div class="paso pasoFinal">
-
-                <div class="numero">
-                    4
-                </div>
-
-
-                <div class="contenidoPaso">
-
-                    <h3>
-                        Forma pendiente-intersección
-                    </h3>
-
-
-                    <p
-                        id="formulaFinal"
-                        class="formulaFinal"
-                    >
-
-                        y = -4/7x - 3/7
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- RESULTADOS -->
-
-            <div class="resultados">
-
-
-                <div class="resultado">
-
-                    <span>
-                        Pendiente
-                    </span>
-
-                    <strong id="pendiente">
-                        m = -4/7
-                    </strong>
-
-                </div>
-
-
-
-                <div class="resultado">
-
-                    <span>
-                        Intersección
-                    </span>
-
-                    <strong id="interseccion">
-                        b = -3/7
-                    </strong>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- PUNTOS -->
-
-            <h2 class="tituloPuntos">
-
-                📍 Puntos para graficar
-
-            </h2>
-
-
-            <div class="puntos">
-
-
-                <div id="punto1">
-                    (0, -0.43)
-                </div>
-
-
-                <div id="punto2">
-                    (7, -4.43)
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- GRÁFICA -->
-
-    <section class="graficaPanel">
-
-
-        <div class="encabezadoGrafica">
-
-
-            <div>
-
-                <h2>
-                    📊 Gráfica
-                </h2>
-
-                <p id="ecuacionGrafica">
-
-                    y = -4/7x - 3/7
-
+                <p id="paso1">
+                    -
                 </p>
 
             </div>
 
 
+            <div class="paso">
+
+                <strong>2. Despejamos Y</strong>
+
+                <p id="paso2">
+                    -
+                </p>
+
+            </div>
+
+
+            <div class="paso">
+
+                <strong>3. Dividimos entre B</strong>
+
+                <p id="paso3">
+                    -
+                </p>
+
+            </div>
+
+
+            <div class="paso">
+
+                <strong>4. Forma pendiente-intercepto</strong>
+
+                <p id="paso4">
+                    -
+                </p>
+
+            </div>
+
         </div>
 
 
+        <!-- PUNTOS -->
 
-        <div class="canvasContenedor">
+        <div class="puntos">
+
+            <h2>Puntos utilizados</h2>
+
+            <div class="punto punto-b">
+
+                <h3>Punto B</h3>
+
+                <p id="puntoB">
+                    -
+                </p>
+
+                <span>
+                    Se obtiene usando x = 0
+                </span>
+
+            </div>
+
+
+            <div class="punto punto-p2">
+
+                <h3>Segundo punto P₂</h3>
+
+                <p id="punto2">
+                    -
+                </p>
+
+                <span>
+                    Se obtiene usando x = 1
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- GRÁFICA -->
+
+        <div class="grafica-container">
+
+            <h2>Gráfica</h2>
+
+            <p class="explicacion-grafica">
+                Se localiza el Punto B y el segundo punto P₂.
+                Después se unen para formar la recta.
+            </p>
 
             <canvas id="grafica"></canvas>
 
+            <div class="leyenda">
+
+                <div>
+                    <span class="circulo rojo"></span>
+                    Punto B
+                </div>
+
+                <div>
+                    <span class="circulo verde"></span>
+                    Punto P₂
+                </div>
+
+                <div>
+                    <span class="linea-azul"></span>
+                    Recta
+                </div>
+
+            </div>
+
+            <div class="controles">
+
+                <button onclick="zoomMenos()">
+                    −
+                </button>
+
+                <button onclick="centrarGrafica()">
+                    Centrar
+                </button>
+
+                <button onclick="zoomMas()">
+                    +
+                </button>
+
+            </div>
+
         </div>
 
+    </div>
 
 
-        <div class="controles">
-
-
-            <button id="zoomMas">
-                🔍 + Zoom
-            </button>
-
-
-            <button id="zoomMenos">
-                🔍 − Zoom
-            </button>
-
-
-            <button id="centrar">
-                🎯 Centrar
-            </button>
-
-
-        </div>
-
-
-    </section>
-
-
-</main>
-
-
-
-<footer>
-
-    Graficador de ecuaciones de recta
-
-</footer>
-
-
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 
 </body>
 
-</html>
+</html> 
