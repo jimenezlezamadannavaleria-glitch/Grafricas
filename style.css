@@ -1,175 +1,682 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  }
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 
 body {
-font-family: Arial, sans-serif;
-background: #f2f4f8;
-color: #222;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #eef2f7;
+
+    color: #202124;
+
 }
+
+
+/* =========================
+   ENCABEZADO
+========================= */
 
 header {
-background: #202124;
-color: white;
-text-align: center;
-padding: 25px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1e3a8a,
+            #2563eb
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 28px 15px;
+
 }
+
 
 header h1 {
-margin-bottom: 8px;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
 }
+
 
 header p {
-font-size: 16px;
+
+    font-size: 16px;
+
+    color: #dbeafe;
+
 }
+
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
 
 main {
-width: 95%;
-max-width: 1200px;
-margin: 25px auto;
 
-display: grid;
+    width: 95%;
 
-grid-template-columns: 320px 1fr;
+    max-width: 1350px;
 
-gap: 20px;
+    margin: 25px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        420px
+        1fr;
+
+    gap: 22px;
 
 }
+
+
+
+/* =========================
+   PANELES
+========================= */
+
+.panel,
+.graficaPanel {
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.10);
+
+}
+
+
+
+/* =========================
+   PANEL IZQUIERDO
+========================= */
 
 .panel {
-background: white;
 
-padding: 22px;
-
-border-radius: 15px;
-
-box-shadow:
-    0 4px 15px rgba(0,0,0,0.10);
+    padding: 25px;
 
 }
+
 
 .panel h2 {
-margin-bottom: 20px;
-}
 
-.formula {
-font-size: 20px;
-
-margin-bottom: 20px;
-
-line-height: 2.5;
+    margin-bottom: 10px;
 
 }
 
-input {
-width: 80px;
 
-padding: 9px;
+.descripcion {
 
-font-size: 18px;
+    color: #6b7280;
 
-border: 1px solid #aaa;
-
-border-radius: 8px;
-
-text-align: center;
+    margin-bottom: 15px;
 
 }
+
+
+
+/* =========================
+   ENTRADA ECUACIÓN
+========================= */
+
+.formulaEntrada {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    background: #f1f5f9;
+
+    border-radius: 12px;
+
+    padding: 18px 8px;
+
+    margin-bottom: 15px;
+
+    font-size: 21px;
+
+}
+
+
+.formulaEntrada input {
+
+    width: 65px;
+
+    padding: 10px 5px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    border: 2px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    background: white;
+
+}
+
+
+.formulaEntrada input:focus {
+
+    outline: none;
+
+    border-color: #2563eb;
+
+}
+
+
+
+/* =========================
+   BOTONES
+========================= */
 
 button {
-width: 100%;
 
-padding: 12px;
+    border: none;
 
-margin-top: 8px;
+    border-radius: 9px;
 
-border: none;
+    padding: 13px 15px;
 
-border-radius: 8px;
+    font-size: 15px;
 
-background: #2563eb;
+    cursor: pointer;
 
-color: white;
-
-font-size: 16px;
-
-cursor: pointer;
+    transition: .2s;
 
 }
+
 
 button:hover {
-opacity: 0.85;
+
+    transform: translateY(-1px);
+
+    opacity: .9;
+
 }
 
-button.limpiar {
-background: #555;
+
+.botonPrincipal {
+
+    width: 100%;
+
+    background: #2563eb;
+
+    color: white;
+
+    margin-bottom: 9px;
+
 }
+
+
+.botonSecundario {
+
+    width: 100%;
+
+    background: #64748b;
+
+    color: white;
+
+}
+
+
+
+/* =========================
+   PROCEDIMIENTO
+========================= */
+
+.procedimiento {
+
+    margin-top: 25px;
+
+}
+
+
+.paso {
+
+    display: flex;
+
+    gap: 12px;
+
+    padding: 15px 4px;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+}
+
+
+.numero {
+
+    min-width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #dbeafe;
+
+    color: #1d4ed8;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+
+}
+
+
+.contenidoPaso {
+
+    flex: 1;
+
+}
+
+
+.contenidoPaso h3 {
+
+    font-size: 15px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.formula {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+}
+
+
+.pasoFinal {
+
+    background: #eff6ff;
+
+    border-radius: 10px;
+
+    margin-top: 10px;
+
+    padding: 15px;
+
+}
+
+
+.pasoFinal .numero {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+
+.formulaFinal {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #1d4ed8;
+
+}
+
+
+
+/* =========================
+   RESULTADOS
+========================= */
+
+.resultados {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
 
 .resultado {
-margin-top: 25px;
 
-padding: 15px;
+    background: #f1f5f9;
 
-background: #f1f5f9;
+    border-radius: 10px;
 
-border-radius: 10px;
+    padding: 15px;
+
+    text-align: center;
+
+}
+
+
+.resultado span {
+
+    display: block;
+
+    font-size: 13px;
+
+    color: #64748b;
+
+    margin-bottom: 7px;
 
 }
 
-.resultado h3 {
-margin-bottom: 7px;
+
+.resultado strong {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 21px;
+
 }
 
-.resultado p {
-margin-bottom: 15px;
 
-line-height: 1.6;
+
+/* =========================
+   PUNTOS
+========================= */
+
+.tituloPuntos {
+
+    margin-top: 22px;
+
+    font-size: 19px;
 
 }
+
+
+.puntos {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+}
+
+
+.puntos div {
+
+    background: #dbeafe;
+
+    color: #1e3a8a;
+
+    padding: 12px;
+
+    border-radius: 9px;
+
+    text-align: center;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+}
+
+
+
+/* =========================
+   GRÁFICA
+========================= */
+
+.graficaPanel {
+
+    padding: 20px;
+
+    min-width: 0;
+
+}
+
+
+.encabezadoGrafica {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+}
+
+
+.encabezadoGrafica p {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 20px;
+
+    color: #1d4ed8;
+
+    margin-top: 5px;
+
+    font-weight: bold;
+
+}
+
+
+
+/* =========================
+   CANVAS
+========================= */
+
+.canvasContenedor {
+
+    width: 100%;
+
+    height: 650px;
+
+}
+
 
 #grafica {
-width: 100%;
 
-height: 600px;
+    display: block;
 
-background: white;
+    width: 100%;
 
-border-radius: 15px;
+    height: 100%;
 
-box-shadow:
-    0 4px 15px rgba(0,0,0,0.10);
+    background: white;
 
-display: block;
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 12px;
+
+    touch-action: none;
 
 }
+
+
+
+/* =========================
+   CONTROLES
+========================= */
+
+.controles {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 12px;
+
+}
+
+
+.controles button {
+
+    flex: 1;
+
+    min-width: 110px;
+
+    background: #1e40af;
+
+    color: white;
+
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-text-align: center;
 
-padding: 20px;
+    text-align: center;
 
-color: #666;
+    color: #64748b;
+
+    padding: 25px;
+
+}
+
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 900px) {
+
+    main {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .canvasContenedor {
+
+        height: 520px;
+
+    }
 
 }
 
-@media (max-width: 800px) {
 
-main {
-    grid-template-columns: 1fr;
-}
 
-#grafica {
-    height: 450px;
-}
+@media (max-width: 500px) {
 
-.panel {
-    order: 1;
-}
+    header h1 {
 
-.grafica-container {
-    order: 2;
-}
+        font-size: 24px;
 
-}
+    }
+
+
+    header p {
+
+        font-size: 14px;
+
+    }
+
+
+    main {
+
+        width: 94%;
+
+        margin-top: 15px;
+
+    }
+
+
+    .panel,
+    .graficaPanel {
+
+        padding: 16px;
+
+    }
+
+
+    .canvasContenedor {
+
+        height: 430px;
+
+    }
+
+
+    .formulaEntrada {
+
+        font-size: 18px;
+
+    }
+
+
+    .formulaEntrada input {
+
+        width: 55px;
+
+    }
+
+
+    .formula {
+
+        font-size: 18px;
+
+    }
+
+
+    .formulaFinal {
+
+        font-size: 21px;
+
+    }
+
+      } 
